@@ -18,34 +18,38 @@
 </head>
 <body>
 	<div id="image-container"></div>
-	<hr>
-	<div>
-		<label><input type="checkbox" onchange="toggleImages()">Show Images</label>
-	</div>
 	<script>
-		var images = [
+	var images = [
 			'd1',
+			'r1',
 			'd2',
-			'd3'
+			'r2',
+			'r3',
+			'd3',
+			'd4',
+			'r4'
 		];
 		var imageContainer = document.getElementById('image-container');
 		for (var i = 0; i < images.length; i++) {
 			var image = new Image();
-			image.src = 'images/'+images[i]+'.png';
-			image.style.width = '200px';
-			image.style.height = '300px';
+			image.src = image.src = 'images/'+images[i]+'.png';
+			image.style.width = '300px';
+			image.style.height = '400px';
 			imageContainer.appendChild(image);
 			imageContainer.appendChild(document.createElement('hr'));
+			var checkbox = document.createElement('input');
+			checkbox.type = 'checkbox';
+			checkbox.checked = true;
+			checkbox.addEventListener('change', toggleImage);
+			imageContainer.appendChild(checkbox);
 		}
-		function toggleImages() {
-			var checkboxes = document.querySelectorAll('#image-container input[type="checkbox"]');
-			for (var i = 0; i < checkboxes.length; i++) {
-				var image = checkboxes[i].parentNode.querySelector('img');
-				if (checkboxes[i].checked) {
-					image.style.display = 'block';
-				} else {
-					image.style.display = 'none';
-				}
+		function toggleImage(event) {
+			var checkbox = event.target;
+			var image = checkbox.previousSibling;
+			if (checkbox.checked) {
+				image.style.display = 'block';
+			} else {
+				image.style.display = 'none';
 			}
 		}
 	</script>
