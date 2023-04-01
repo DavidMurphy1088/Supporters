@@ -1,30 +1,10 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Display Images Loaded from List</title>
-	<style>
-		img {
-			display: block;
-			margin-bottom: 10px;
-			width: 200px;
-			height: 300px;
-		}
-		hr {
-			border: none;
-			border-top: 1px solid black;
-			margin: 20px 0;
-		}
-	</style>
-</head>
-<body>
-	<h1>Republican or Democrat?</h1>
-	For each person listed, decide if they support Trump or not in his indictment...
-	At the end, watch the video to see if you were correct.
-	<br><br>
-	<div id="image-container"></div>
-	<hr>
-	<a href="https://www.bbc.com/news/world-us-canada-65143479">Watch Video</a>
+	<title>Display Images</title>
 	<script>
+		window.onload = function() {
 	var images = [
 			'd1',
 			'r1',
@@ -33,33 +13,39 @@
 			'r3',
 			'd3',
 			'd4',
-			'r4'
+			'r4',
+			'd5'
 		];
-		var imageContainer = document.getElementById('image-container');
-		for (var i = 0; i < images.length; i++) {
-			var image = new Image();
-			image.src = image.src = 'images/'+images[i]+'.png';
-			image.style.width = '300px';
-			image.style.height = '400px';
-			imageContainer.appendChild(image);
-			
-			var checkbox = document.createElement('input');
-			checkbox.type = 'checkbox';
-			checkbox.checked = true;
-			checkbox.addEventListener('change', toggleImage);
-			imageContainer.appendChild(checkbox);
-			
-			imageContainer.appendChild(document.createElement('hr'));
-		}
-		function toggleImage(event) {
-			var checkbox = event.target;
-			var image = checkbox.previousSibling;
-			if (checkbox.checked) {
-				image.style.display = 'block';
-			} else {
-				image.style.display = 'none';
+			var container = document.getElementById("container");
+			for (var i = 0; i < images.length; i++) {
+				var image = new Image();
+				image.src = image.src = 'images/'+images[i]+'.png';
+				image.width = 200;
+				image.height = 300;
+				container.appendChild(image);
+				var checkbox = document.createElement("input");
+				checkbox.type = "checkbox";
+				checkbox.name = "cb";
+				checkbox.value = "cb";
+				container.appendChild(checkbox);
+				var label = document.createElement("label");
+				label.innerHTML = "Supports Trump";
+				container.appendChild(label);
+				var hr = document.createElement("hr");
+				container.appendChild(hr);
 			}
-		}
+			var videoLink = document.createElement("a");
+			videoLink.href = "https://www.youtube.com/watch?v=VIDEO_ID&t=2s";
+			videoLink.innerHTML = "Watch Video";
+			container.appendChild(videoLink);
+		};
 	</script>
+</head>
+<body>
+	<h1>Republican or Democrat?</h1>
+	For each person listed, decide if they support Trump or not in his indictment...
+	At the end, watch the video to see if you were correct.
+	<br><br>
+	<div id="container"></div>
 </body>
 </html>
