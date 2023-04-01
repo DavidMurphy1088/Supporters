@@ -28,52 +28,30 @@
 				
 				// form with options 
 				
-				var heading = document.createElement("h2");
-				heading.textContent = "Choose an Option";
-
 				var form = document.createElement("form");
-				form.setAttribute("onsubmit", "return validateForm()");
-
-				var option1 = document.createElement("input");
-				option1.setAttribute("type", "radio");
-				option1.setAttribute("id", "option1");
-				option1.setAttribute("name", "option");
-				option1.setAttribute("value", "option1");
-
-				var label1 = document.createElement("label");
-				label1.setAttribute("for", "Supports Trump?");
-				label1.textContent = "Option 1";
-
-				var lineBreak1 = document.createElement("br");
-
-				var option2 = document.createElement("input");
-				option2.setAttribute("type", "radio");
-				option2.setAttribute("id", "option2");
-				option2.setAttribute("name", "option");
-				option2.setAttribute("value", "option2");
-
-				var label2 = document.createElement("label");
-				label2.setAttribute("for", "Opposes Trump?");
-				label2.textContent = "Option 2";
-
-				var lineBreak2 = document.createElement("br");
-
-				var submitButton = document.createElement("input");
-				submitButton.setAttribute("type", "submit");
-				submitButton.setAttribute("value", "Submit");
-
-				form.appendChild(option1);
-				form.appendChild(label1);
-				form.appendChild(lineBreak1);
-				form.appendChild(option2);
-				form.appendChild(label2);
-				form.appendChild(lineBreak2);
-				form.appendChild(submitButton);
-
-				container.appendChild(heading);
+				var supports = document.createElement("input");
+				supports.type = "radio";
+				supports.name = "opinion" + i;
+				supports.value = "supports";
+				supports.id = "supports" + i;
+				var supportsLabel = document.createElement("label");
+				supportsLabel.setAttribute("for", "supports" + i);
+				supportsLabel.textContent = "Supports";
+				var opposes = document.createElement("input");
+				opposes.type = "radio";
+				opposes.name = "opinion" + i;
+				opposes.value = "opposes";
+				opposes.id = "opposes" + i;
+				var opposesLabel = document.createElement("label");
+				opposesLabel.setAttribute("for", "opposes" + i);
+				opposesLabel.textContent = "Opposes";
+				form.appendChild(supports);
+				form.appendChild(supportsLabel);
+				form.appendChild(opposes);
+				form.appendChild(opposesLabel);
 				container.appendChild(form);
+				
 				container.appendChild(hr);
-
 				
 				/*
 				var checkbox = document.createElement("input");
