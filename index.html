@@ -26,7 +26,9 @@
 				var hr = document.createElement("br");
 				container.appendChild(hr);
 				
-				var heading = document.createElement("h1");
+				// form with options 
+				
+				var heading = document.createElement("h2");
 				heading.textContent = "Choose an Option";
 
 				var form = document.createElement("form");
@@ -68,8 +70,8 @@
 				form.appendChild(lineBreak2);
 				form.appendChild(submitButton);
 
-				document.body.appendChild(heading);
-				document.body.appendChild(form);
+				container.appendChild(heading);
+				container.appendChild(form);
 
 				
 				/*
