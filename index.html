@@ -27,6 +27,8 @@
 				container.appendChild(hr);
 				
 				// form with options 
+				var heading = document.createElement("h3");
+      				heading.textContent = "Select";
 				
 				var form = document.createElement("form");
 				var supports = document.createElement("input");
@@ -92,15 +94,6 @@
 	For each person listed below, decide if they support Trump or not in his indictment...
 	At the end, watch the video to see if you were correct.
 	<br><br>
-	
-	<h1>Choose an Option</h1>
-	<form onsubmit="return validateForm()">
-		<input type="radio" id="option1" name="option" value="option1">
-		<label for="option1">Option 1</label><br>
-		<input type="radio" id="option2" name="option" value="option2">
-		<label for="option2">Option 2</label><br>
-		<input type="submit" value="Submit">
-	</form>
 	
 	<div id="container"></div>
 </body>
