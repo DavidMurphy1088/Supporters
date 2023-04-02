@@ -84,13 +84,14 @@
 			// Add an event listener to the form to save the user's selection
 			
 			form.addEventListener('change', event => {
-			  console.log("id "+event.target.id) // + " ==>"+ event.target.id.substring(4, 1);); 
+			  var id = event.target.id.substring(4, 1)
+			  console.log("id "+event.target.id + " ==>" + id);
 			  // Save the user's selection in the userSelections object
 			  // userSelections[image.src] = event.target.value;
 
 			  // Create a new row in the vote table to display the user's selection
 			  // const row = voteTable.insertRow(-1);
-			  var r = 0 //parseInt(event.target.id.substring(4, 1);)
+			  var r = parseInt(id);
 			  
 			  var row = voteTable.rows[r];
 				
