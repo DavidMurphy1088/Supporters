@@ -30,9 +30,9 @@
 		    var cell1 = document.createElement("td");
 		    cell1.textContent = images[i];
 		    var cell2 = document.createElement("td");
-		    cell2.textContent = "not selected ...";
+		    cell2.textContent = "cell1 "+String(i);
 		    var cell3 = document.createElement("td");
-		    cell3.textContent = "..";
+		    cell3.textContent = "cell2 "+String(i);
 
 		    // Append the cell elements to the new row element
 		    newRow.appendChild(cell1);
@@ -92,7 +92,6 @@
 			  // Create a new row in the vote table to display the user's selection
 			  // const row = voteTable.insertRow(-1);
 			  var r = parseInt(id);
-			  
 			  var row = voteTable.rows[r];
 				
 			  const cell0 = row.cells[0]
