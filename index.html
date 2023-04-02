@@ -78,16 +78,16 @@
 			
 			form.addEventListener('change', event => {
 			  // Save the user's selection in the userSelections object
-			  userSelections[image.src] = event.target.value;
+			  // userSelections[image.src] = event.target.value;
 
 			  // Create a new row in the vote table to display the user's selection
 			  // const row = voteTable.insertRow(-1);
 			  var row = voteTable.rows[i];
-			  const imgCell = row.insertCell(0);
-			  imgCell.innerHTML = userSelections[image.src];
-			  const voteCell = row.insertCell(1);
+			  const cell1 = row.cells[0]
+			  cell1.innerHTML = image.src
+			  const cell2 = row.cells[1]
 			  // imgCell.appendChild(img.cloneNode());
-			  voteCell.innerHTML = userSelections[image.src];
+			  cell2.innerHTML = event.target.value;
 			});
 			
 			form.appendChild(supports);
