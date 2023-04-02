@@ -19,8 +19,26 @@
 			
 		// Create a new table to store the user's selections
       		const userSelections = {};
+			
 		// Get a reference to the vote table element
       		const voteTable = document.getElementById('vote-table').getElementsByTagName('tbody')[0];
+		for (var i = 0; i < images.length; i++) {
+		    // Create a new row element
+		    var newRow = document.createElement("tr");
+
+		    // Create new cell elements and set their text content
+		    var cell1 = document.createElement("td");
+		    cell1.textContent = "Row " + (i+3) + ", Column 1";
+		    var cell2 = document.createElement("td");
+		    cell2.textContent = "Row " + (i+3) + ", Column 2";
+
+		    // Append the cell elements to the new row element
+		    newRow.appendChild(cell1);
+		    newRow.appendChild(cell2);
+
+		    // Append the new row element to the table
+		    voteTable.appendChild(newRow);
+		}
 			
 		var container = document.getElementById("container");
 		for (var i = 0; i < images.length; i++) {
@@ -63,7 +81,8 @@
 			  userSelections[image.src] = event.target.value;
 
 			  // Create a new row in the vote table to display the user's selection
-			  const row = voteTable.insertRow(-1);
+			  // const row = voteTable.insertRow(-1);
+			  var row = voteTable.rows[i];
 			  const imgCell = row.insertCell(0);
 			  imgCell.innerHTML = userSelections[image.src];
 			  const voteCell = row.insertCell(1);
@@ -109,8 +128,8 @@
 	
 	<img src="path/magaHat.jpg" alt="">
 	
-	For each person listed below, decide if they support the upcoming indictment of Trump or not.
-	<br>When all your answers are submitted you watch the person's comments to see if you were correct.
+	<br>For each person listed below, decide if they support the upcoming indictment of Trump or not.
+	<br>When all your answers are submitted you can watch the person's comments to see if you were correct.
 	
 	<table id="vote-table">
 		<thead>
