@@ -45,6 +45,7 @@
 			
 		var container = document.getElementById("container");
 		for (var i = 0; i < images.length; i++) {
+			console.log("===>loop"+String(i)); 
 			var image = new Image();
 			image.src = image.src = 'images/'+images[i]+'.png';
 			image.width = 200;
@@ -145,7 +146,8 @@
 		<thead>
 		<tr>
 		  <th>Image</th>
-		  <th>Vote</th>
+		  <th>col1</th>
+		  <th>col2</th>
 		</tr>
 		</thead>
 		<tbody>
