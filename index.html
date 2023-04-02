@@ -63,6 +63,7 @@
 			opposesLabel.textContent = "Opposes";
 			
 			// Add an event listener to the form to save the user's selection
+			/*
 			form.addEventListener('change', event => {
 			  // Save the user's selection in the userSelections object
 			  userSelections[image.src] = event.target.value;
@@ -74,6 +75,7 @@
 			  imgCell.appendChild(img.cloneNode());
 			  voteCell.innerHTML = userSelections[image.src];
 			});
+			*/
 			
 			form.appendChild(supports);
 			form.appendChild(supportsLabel);
@@ -123,7 +125,19 @@
 <body>
 	<h1>Republican or Democrat?</h1>
 	For each person listed below, decide if they support Trump or not in his indictment...
-	At the end, watch the video to see if you were correct.
+	<br>At the end, watch the video to see if you were correct.
+	
+	<table id="vote-table">
+		<thead>
+		<tr>
+		  <th>Image</th>
+		  <th>Vote</th>
+		</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+
 	<br><br>
 	
 	<div id="container"></div>
