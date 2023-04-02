@@ -67,7 +67,7 @@
 			supports.type = "radio";
 			supports.name = "opinion" + i;
 			supports.value = "supports";
-			supports.id = "supports" + i;
+			supports.id = "sup_" + i;
 			var supportsLabel = document.createElement("label");
 			supportsLabel.setAttribute("for", "supports" + i);
 			supportsLabel.textContent = "Supports";
@@ -76,7 +76,7 @@
 			opposes.type = "radio";
 			opposes.name = "opinion" + i;
 			opposes.value = "opposes";
-			opposes.id = "opposes" + i;
+			opposes.id = "opp_" + i;
 			var opposesLabel = document.createElement("label");
 			opposesLabel.setAttribute("for", "opposes" + i);
 			opposesLabel.textContent = "Opposes";
@@ -84,13 +84,14 @@
 			// Add an event listener to the form to save the user's selection
 			
 			form.addEventListener('change', event => {
-			  console.log(event.target.name); 
+			  console.log("id "+event.target.id+ " ==>"+ event.target.id.substring(4, 1);); 
 			  // Save the user's selection in the userSelections object
 			  // userSelections[image.src] = event.target.value;
 
 			  // Create a new row in the vote table to display the user's selection
 			  // const row = voteTable.insertRow(-1);
-			  var r = 0 //parseInt(id.textContent)
+			  var r = parseInt(event.target.id.substring(4, 1);)
+			  
 			  var row = voteTable.rows[r];
 				
 			  const cell0 = row.cells[0]
