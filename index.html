@@ -37,12 +37,6 @@
 			heading.textContent = "Select Supports or Opposes the Indictment";
 			container.appendChild(heading);
 
-			var formImage = document.createElement("img");
-			formImage.src = 'images/magaHat.png';
-			formImage.width = 50;
-			formImage.height = 50;
-			container.appendChild(formImage);
-
 			var form = document.createElement("form");
 			var supports = document.createElement("input");
 			supports.type = "radio";
@@ -63,7 +57,7 @@
 			opposesLabel.textContent = "Opposes";
 			
 			// Add an event listener to the form to save the user's selection
-			/*
+			
 			form.addEventListener('change', event => {
 			  // Save the user's selection in the userSelections object
 			  userSelections[image.src] = event.target.value;
@@ -71,11 +65,11 @@
 			  // Create a new row in the vote table to display the user's selection
 			  const row = voteTable.insertRow(-1);
 			  const imgCell = row.insertCell(0);
+			  imgCell.innerHTML = userSelections[image.src];
 			  const voteCell = row.insertCell(1);
-			  imgCell.appendChild(img.cloneNode());
+			  // imgCell.appendChild(img.cloneNode());
 			  voteCell.innerHTML = userSelections[image.src];
 			});
-			*/
 			
 			form.appendChild(supports);
 			form.appendChild(supportsLabel);
@@ -85,18 +79,6 @@
 
 			container.appendChild(hr);
 
-			/*
-			var checkbox = document.createElement("input");
-			checkbox.type = "checkbox";
-			checkbox.name = "cb";
-			checkbox.value = "cb";
-			container.appendChild(checkbox);
-			var label = document.createElement("label");
-			label.innerHTML = "Supports Trump";
-			container.appendChild(label);
-			var hr = document.createElement("hr");
-			container.appendChild(hr);
-			*/
 		}
 		/*
 		var videoLink = document.createElement("a");
