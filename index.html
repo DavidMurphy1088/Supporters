@@ -30,11 +30,11 @@
 
 		    // Create new cell elements and set their text content
 		    var cell1 = document.createElement("td");
-		    cell1.textContent = images[i];
+		    //cell1.textContent = images[i];
 		    var cell2 = document.createElement("td");
-		    cell2.textContent = "cell1 "+String(i);
+		    //cell2.textContent = "cell1 "+String(i);
 		    var cell3 = document.createElement("td");
-		    cell3.textContent = "cell2 "+String(i);
+		    //cell3.textContent = "cell2 "+String(i);
 
 		    // Append the cell elements to the new row element
 		    newRow.appendChild(cell1);
@@ -43,9 +43,7 @@
 
 		    // Append the new row element to the table
 		    voteTable.appendChild(newRow);
-		//}
-			
-		//for (var i = 0; i < images.length; i++) {
+
 			console.log("===>loop"+String(i)); 
 			var image = new Image();
 			image.src = image.src = 'images/'+images[i]+'.png';
@@ -55,8 +53,8 @@
 			
 			var smallImage = new Image();
 			smallImage.src = image.src = 'images/'+images[i]+'.png';
-			smallImage.width = 20;
-			smallImage.height = 30;
+			smallImage.width = 60;
+			smallImage.height = 90;
 			//container.appendChild(image)
 			cell1.appendChild(smallImage)
 			
@@ -94,6 +92,7 @@
 			
 			form.addEventListener('change', event => {
 			  var id = event.target.id.substring(4, 5)
+			  var idName = event.target.id.substring(0, 4)
 			  console.log("id "+event.target.id + " ==>" + id);
 			  // Save the user's selection in the userSelections object
 			  // userSelections[image.src] = event.target.value;
@@ -105,11 +104,12 @@
 			  console.log("id R==" + r);
 				
 			  const cell0 = row.cells[0]
-			  cell0.textContent = image.src
+			  //cell0.textContent = image.src
 			  const cell1 = row.cells[1]
-			  cell1.textContent = event.target.name;
+			  //cell1.textContent = event.target.name = ;
+			  cell1.textContent = idName; //value
 			  const cell2 = row.cells[2]
-			  cell2.textContent = event.target.id; //value
+			  
 			});
 			
 			form.appendChild(supports);
@@ -148,7 +148,7 @@
 <body>
 	<h1>Republican or Democrat?</h1>
 	
-	<img src="images/magaHat.png" alt="" height="30">
+	<img src="images/magaHat.png" alt="" height="70">
 	
 	<br>For each person listed below, decide if they support the upcoming indictment of Trump or not.
 	<br>When all your answers are submitted you can watch the person's comments to see if you were correct.
