@@ -108,13 +108,13 @@
 			  const cell1 = row.cells[1]
 			  //cell1.textContent = event.target.name = ;
 			  // = idName = "sup" ? "Supports" : "Does Not Support"; 
-			  if (idName = "sup") {
+			  if (idName === "sup") {
 			      cell1.textContent = "Supports"
 			      var icon = new Image();
 			      icon.src = image.src = "images/magaHat.png";
 			      icon.width = 30;
 			      icon.height = 30;
-			      cell1.appendChild(image)
+			      cell1.appendChild(icon)
 			  }
 		          else {
 			    cell1.textContent = "No Support"
@@ -160,7 +160,7 @@
 	<br>For each person listed below, decide if they support the upcoming indictment of Trump or not.
 	<br>When all your answers are submitted you can watch the person's comments to see if you were correct.
 	
-	<form id="submitForm" style="border: 1px solid black;">
+	<form id="submitForm" style="width: 400px; border: 1px solid black;">
 	  <!--
 	  //<label for="nameInput">Name:</label>
 	  //<input type="text" id="nameInput" name="name"><br>
