@@ -44,7 +44,7 @@
 		    // Append the new row element to the table
 		    voteTable.appendChild(newRow);
 
-			console.log("===>loop"+String(i)); 
+			//console.log("===>loop"+String(i)); 
 			var image = new Image();
 			image.src = image.src = 'images/'+images[i]+'.png';
 			image.width = 200;
@@ -92,7 +92,7 @@
 			
 			form.addEventListener('change', event => {
 			  var id = event.target.id.substring(4, 5)
-			  var idName = event.target.id.substring(0, 4)
+			  var idName = event.target.id.substring(0, 3)
 			  console.log("id "+event.target.id + " ==>" + id);
 			  // Save the user's selection in the userSelections object
 			  // userSelections[image.src] = event.target.value;
@@ -107,7 +107,7 @@
 			  //cell0.textContent = image.src
 			  const cell1 = row.cells[1]
 			  //cell1.textContent = event.target.name = ;
-			  cell1.textContent = idName; //value
+			  cell1.textContent = idName = "sup" ? "Supports" : "Does Not Support"; 
 			  const cell2 = row.cells[2]
 			  
 			});
@@ -166,12 +166,14 @@
 	</table>
 	
 	<form id="submitForm">
+	  <!--
 	  //<label for="nameInput">Name:</label>
 	  //<input type="text" id="nameInput" name="name"><br>
 
 	  //<label for="emailInput">Email:</label>
 	  //<input type="email" id="emailInput" name="email"><br>
-
+	  -->
+		
 	  <button type="submit">Submit</button>
 	</form>
 
