@@ -19,9 +19,11 @@
 			
 		// Create a new table to store the user's selections
       		const userSelections = {};
-			
+		var container = document.getElementById("container");
+
 		// Get a reference to the vote table element
       		const voteTable = document.getElementById('vote-table').getElementsByTagName('tbody')[0];
+			
 		for (var i = 0; i < images.length; i++) {
 		    // Create a new row element
 		    var newRow = document.createElement("tr");
@@ -41,16 +43,23 @@
 
 		    // Append the new row element to the table
 		    voteTable.appendChild(newRow);
-		}
+		//}
 			
-		var container = document.getElementById("container");
-		for (var i = 0; i < images.length; i++) {
+		//for (var i = 0; i < images.length; i++) {
 			console.log("===>loop"+String(i)); 
 			var image = new Image();
 			image.src = image.src = 'images/'+images[i]+'.png';
 			image.width = 200;
 			image.height = 300;
 			container.appendChild(image);
+			
+			var smallimage = new Image();
+			smallimage.src = image.src = 'images/'+images[i]+'.png';
+			image.width = 20;
+			image.height = 30;
+			container.appendChild(image)
+			cell1.appendChild(smallImage)
+			
 			var hr = document.createElement("br");
 			container.appendChild(hr);
 
@@ -139,7 +148,7 @@
 <body>
 	<h1>Republican or Democrat?</h1>
 	
-	<img src="images/magaHat.jpg" alt="">
+	<img src="images/magaHat.png" alt="">
 	
 	<br>For each person listed below, decide if they support the upcoming indictment of Trump or not.
 	<br>When all your answers are submitted you can watch the person's comments to see if you were correct.
@@ -147,9 +156,9 @@
 	<table id="vote-table">
 		<thead>
 		<tr>
-		  <th>col0</th>
-		  <th>col1</th>
-		  <th>col2</th>
+		  <th></th>
+		  <th>Supports?</th>
+		  <th>Correct?</th>
 		</tr>
 		</thead>
 		<tbody>
