@@ -93,7 +93,7 @@
 			form.addEventListener('change', event => {
 			  var id = event.target.id.substring(4, 5)
 			  var idName = event.target.id.substring(0, 3)
-			  console.log("id "+event.target.id + " ==>" + id);
+			  console.log("id "+event.target.id + " ==>" + id + " " + idName);
 			  // Save the user's selection in the userSelections object
 			  // userSelections[image.src] = event.target.value;
 
@@ -107,15 +107,18 @@
 			  //cell0.textContent = image.src
 			  const cell1 = row.cells[1]
 			  //cell1.textContent = event.target.name = ;
-			  cell1.textContent = idName = "sup" ? "Supports" : "Does Not Support"; 
-			  if (idName == "sup) {
+			   = idName = "sup" ? "Supports" : "Does Not Support"; 
+			  if (idName = "sup) {
+			      cell1.textContent = "Supports"
 			      var icon = new Image();
 			      icon.src = image.src = "images/magaHat.png";
 			      icon.width = 30;
 			      icon.height = 30;
 			      cell1.appendChild(image)
 			  }
-			  // const cell2 = row.cells[2]
+		          else {
+			    cell1.textContent = "No Support"
+		          }
 			});
 			
 			form.appendChild(supports);
@@ -174,8 +177,8 @@
 		<thead>
 		<tr>
 		  <th></th>
-		  <th>Supports?</th>
-		  <th>Correct?</th>
+		  <th>Supports</th>
+		  <th>Correct</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -186,6 +189,10 @@
 	  const form = document.getElementById("submitForm");
 	  form.addEventListener("submit", function(event) {
 	    event.preventDefault();
+	    const voteTable = document.getElementById('vote-table').getElementsByTagName('tbody')[0];
+			
+	    for (var i = 0; i < images.length; i++) {
+	    }
 	    const name = document.getElementById("nameInput").value;
 	    const email = document.getElementById("emailInput").value;
 	    console.log("Name: " + name + ", Email: " + email);
