@@ -53,11 +53,11 @@
 			image.height = 300;
 			container.appendChild(image);
 			
-			var smallimage = new Image();
-			smallimage.src = image.src = 'images/'+images[i]+'.png';
-			image.width = 20;
-			image.height = 30;
-			container.appendChild(image)
+			var smallImage = new Image();
+			smallImage.src = image.src = 'images/'+images[i]+'.png';
+			smallImage.width = 20;
+			smallImage.height = 30;
+			//container.appendChild(image)
 			cell1.appendChild(smallImage)
 			
 			var hr = document.createElement("br");
@@ -164,6 +164,27 @@
 		<tbody>
 		</tbody>
 	</table>
+	
+	<form id="submitForm">
+	  //<label for="nameInput">Name:</label>
+	  //<input type="text" id="nameInput" name="name"><br>
+
+	  //<label for="emailInput">Email:</label>
+	  //<input type="email" id="emailInput" name="email"><br>
+
+	  <button type="submit">Submit</button>
+	</form>
+
+	<script>
+	  const form = document.getElementById("submitForm");
+	  form.addEventListener("submit", function(event) {
+	    event.preventDefault();
+	    const name = document.getElementById("nameInput").value;
+	    const email = document.getElementById("emailInput").value;
+	    console.log("Name: " + name + ", Email: " + email);
+	    // Your code to handle the form data goes here
+	  });
+</script>
 
 	<br><br>
 	
